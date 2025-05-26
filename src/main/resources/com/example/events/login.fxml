@@ -8,9 +8,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.events.LoginController">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.events.Controllers.LoginController">
 
-    <VBox alignment="CENTER" spacing="20.0" style="-fx-padding: 40;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <VBox alignment="CENTER" prefHeight="315.0" prefWidth="400.0" spacing="20.0" style="-fx-padding: 40;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Line endX="145.1654510498047" endY="-235.12744140625" startX="-95.12744140625" startY="-235.12744140625" />
 
         <Label text="Connexion">
@@ -20,13 +20,12 @@
         </Label>
 
         <VBox prefWidth="300" spacing="10.0">
-            <Label text="Nom" />
-            <TextField fx:id="tfNom" promptText="Entrez votre nom" />
-
-            <Label text="Email" />
-            <TextField fx:id="tfEmail" promptText="Entrez votre email" />
+         <children>
+            <TextField fx:id="mdp" promptText="entrez votre mot de passe " />
+         </children>
         </VBox>
 
         <Button fx:id="btnLogin" onAction="#OpenAccueil" style="-fx-background-color: #5E81AC; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 20 8 20; -fx-background-radius: 5;" text="Se connecter" />
+      <Button onAction="#CreateAccount" style="-fx-background-color: #5E81AC; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 20 8 20; -fx-background-radius: 5;" text="Creer un compte" />
     </VBox>
 </AnchorPane>

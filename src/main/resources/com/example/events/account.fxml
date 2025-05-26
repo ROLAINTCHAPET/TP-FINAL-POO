@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="315.0" prefWidth="400.0" spacing="20.0" style="-fx-padding: 40;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.events.Controllers.AccountController">
+   <children>
+      <Line endX="145.1654510498047" endY="-235.12744140625" startX="-95.12744140625" startY="-235.12744140625" />
+      <Label text="Connexion">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <VBox prefWidth="300" spacing="10.0">
+         <children>
+            <Label text="Nom" />
+            <TextField fx:id="tfNom" promptText="Entrez votre nom" />
+            <Label text="Email" />
+            <TextField fx:id="tfEmail" promptText="Entrez votre email" />
+         </children>
+      </VBox>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Mot de passe" textAlignment="JUSTIFY" />
+      <TextField fx:id="passwd" promptText="Entrez votre mot de passe" />
+      <Button mnemonicParsing="false" onAction="#enregistrerOrganisateur" text="Enregistrer" />
+   </children>
+</VBox>

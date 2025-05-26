@@ -1,0 +1,28 @@
+[ {
+  "id" : "conference",
+  "nom" : "AI CONF ",
+  "date" : null,
+  "lieu" : "Douala",
+  "capaciteMax" : 150,
+  "participants" : null,
+  "theme" : "IA",
+  "intervenants" : [ "TCHAPET" ]
+}, {
+  "id" : "conference",
+  "nom" : "AI CONF ",
+  "date" : null,
+  "lieu" : "Douala",
+  "capaciteMax" : 150,
+  "participants" : null,
+  "theme" : "IA",
+  "intervenants" : [ "TCHAPET" ]
+}, {
+  "id" : "conference",
+  "nom" : "AI CONF ",
+  "date" : null,
+  "lieu" : "Douala",
+  "capaciteMax" : 150,
+  "participants" : null,
+  "theme" : "IA",
+  "intervenants" : [ "TCHAPET" ]
+} ]

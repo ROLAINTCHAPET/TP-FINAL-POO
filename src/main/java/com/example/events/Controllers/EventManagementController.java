@@ -1,5 +1,6 @@
-package com.example.events;
+package com.example.events.Controllers;
 
+import com.example.events.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

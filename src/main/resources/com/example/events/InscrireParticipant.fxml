@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.events.InscrireParticipantController">
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.events.Controllers.InscrireParticipantController">
     <children>
         <!-- Titre du formulaire -->
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inscription à l'événement">

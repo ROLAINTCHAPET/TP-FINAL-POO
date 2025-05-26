@@ -1,15 +1,20 @@
 
-package com.example.events;
+package com.example.events.personnes;
 
 //import com.fasterxml.jackson.annotation.JsonCreator;
 //import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Participant implements ParticipantObserver{
+import com.example.events.ParticipantObserver;
+
+public class Participant implements ParticipantObserver {
     public String id;
     public String nom;
     public String email;
 
     //@JsonCreator
+    public Participant() {
+        // Obligatoire pour Jackson
+    }
     public Participant(String id, String nom, String email) {
         this.id = id;
         this.nom = nom;

@@ -5,7 +5,9 @@ package com.example.events;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.example.events.EventManagementController;
+
+import com.example.events.personnes.Participant;
+
 public class SystemedeNotification implements  NotificationService{
 
     private final List<Participant> participants;

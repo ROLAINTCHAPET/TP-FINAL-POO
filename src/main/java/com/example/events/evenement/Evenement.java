@@ -1,25 +1,13 @@
 
 package com.example.events.evenement;
 
-import com.example.events.Participant;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.example.events.personnes.Participant;
+
 
 import java.util.List;
 import java.time.LocalDateTime;
 
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
-@JsonSubTypes({
-        @JsonSubTypes.Type(value = Concert.class, name = "Concert"),
-        @JsonSubTypes.Type(value = Conference.class, name = "Conference")
-})
-
-/*@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
-@JsonSubTypes({
-        @JsonSubTypes.Type(Concert.class),
-        @JsonSubTypes.Type(Conference.class)
-})*/
 public abstract class Evenement {
 
         public String id;

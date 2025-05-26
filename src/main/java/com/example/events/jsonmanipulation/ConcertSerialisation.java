@@ -17,14 +17,15 @@ public class ConcertSerialisation {
         private static final ObjectMapper objectMapper = new ObjectMapper()
                 .enable(SerializationFeature.INDENT_OUTPUT);
         private String filePath = "/home/ghost/Downloads/events/events.json";
+        File file = new File(filePath);
 
-        public ConcertSerialisation() {
+    public ConcertSerialisation() {
             // Créer le fichier s'il n'existe pas
             try {
                 if (!Files.exists(Paths.get(filePath))) {
                     Files.createFile(Paths.get(filePath));
                     // Écrire un tableau vide si le fichier est nouveau
-                    objectMapper.writeValue(new File(filePath), new Concert[0]);
+                    objectMapper.writeValue(file, new Concert[0]);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -41,13 +42,13 @@ public class ConcertSerialisation {
 
         // Obtenir tous les concert du fichier
         public List<Concert> getAllConcerts() throws IOException {
-            Concert[] personnesArray = objectMapper.readValue(new File(filePath), Concert[].class);
+            Concert[] personnesArray = objectMapper.readValue(file, Concert[].class);
             return new ArrayList<>(Arrays.asList(personnesArray));
         }
 
         // Sauvegarder toutes les conferences dans le fichier
         public void saveAllConcerts(List<Concert> concerts) throws IOException {
-            objectMapper.writeValue(new File(filePath), concerts);
+            objectMapper.writeValue(file, concerts);
         }
 
         // Mettre à jour une personne
