@@ -15,10 +15,10 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import javafx.scene.control.Alert;
 
 public class OrganisateurSerialisation {
-    private static final ObjectMapper objectMapper = new ObjectMapper()
+    public static final ObjectMapper objectMapper = new ObjectMapper()
             .enable(SerializationFeature.INDENT_OUTPUT);
-    private String filePath = "/home/ghost/Downloads/events/Organisateur.json";
-    File file = new File(filePath) ;
+    public String filePath = "/home/ghost/Downloads/events/Organisateur.json";
+    public File file = new File(filePath) ;
     public OrganisateurSerialisation() {
         // Créer le fichier s'il n'existe pas
         try {
@@ -82,7 +82,7 @@ public class OrganisateurSerialisation {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur de connexion");
             alert.setHeaderText(null);
-            alert.setContentText("Aucun organisateur trouvé avec ce mot de passe.");
+            alert.setContentText("Aucun organisateur trouvé avec ce mot de passe. Vous n'avez Certainement pas de compte, creez en un");
             alert.showAndWait();
             return null;
 

@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import com.example.events.jsonmanipulation.OrganisateurSerialisation;
 import com.example.events.personnes.Organisateur;
+import com.example.events.Controllers.EventManagementController;
 
 import com.example.events.evenement.Concert;
 import com.example.events.evenement.Conference;
@@ -41,6 +42,8 @@ public class LoginController {
                 stage.setTitle("Gestion d'evenements");
                 stage.setScene(scene);
                 stage.show();
+                EventManagementController evmc = new EventManagementController();
+                evmc.initialize();
             }
     }
 
@@ -48,12 +51,11 @@ public class LoginController {
     void CreateAccount(ActionEvent event) throws IOException {
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("account.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 900,900);
-            stage.setTitle("Hello!");
+            Scene scene = new Scene(fxmlLoader.load(), 500,500);
+            stage.setTitle("Gestion d'evenements");
             stage.setScene(scene);
             stage.show();
         }
-
 
 
     }

@@ -1,17 +1,25 @@
 package com.example.events.Controllers;
 
 import com.example.events.HelloApplication;
+import com.example.events.evenement.Concert;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import com.example.events.evenement.Concert;
+import com.example.events.jsonmanipulation.ConcertSerialisation;
+
 
 import java.io.IOException;
+import java.util.List;
 
 public class EventManagementController {
 
@@ -113,7 +121,7 @@ public class EventManagementController {
     private TabPane tabPaneEvenements;
 
     @FXML
-    private TableView<?> tableConcerts;
+    private TableView<Concert> tableConcerts;
 
     @FXML
     private TableView<?> tableConferences;
@@ -158,8 +166,13 @@ public class EventManagementController {
     }
 
     @FXML
-    void handleBtnNouvelEvenement(ActionEvent event) {
-
+    void handleBtnNouvelEvenement(ActionEvent event) throws Exception{
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("eventcreate.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400,400);
+        stage.setTitle("Gestion des Evenements!");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -200,6 +213,21 @@ public class EventManagementController {
         stage.setTitle("Gestion des Evenements!");
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    public void initialize() throws IOException {
+        colConcertNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        colConcertArtiste.setCellValueFactory(new PropertyValueFactory<>("artiste"));
+        colConcertDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        colConcertLieu.setCellValueFactory(new PropertyValueFactory<>("lieu"));
+        colConcertCapacite.setCellValueFactory(new PropertyValueFactory<>("capaciteMaximale"));
+
+        // Exemple : charger des concerts fictifs
+
+        ConcertSerialisation ser = new ConcertSerialisation();
+        List<Concert> CONCERTLIST = ser.getAllConcerts();
+
+        tableConcerts.setItems(FXCollections.observableArrayList(CONCERTLIST));
     }
 
 }

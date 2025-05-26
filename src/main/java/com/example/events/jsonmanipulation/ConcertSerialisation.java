@@ -18,6 +18,7 @@ public class ConcertSerialisation {
                 .enable(SerializationFeature.INDENT_OUTPUT);
         private String filePath = "/home/ghost/Downloads/events/events.json";
         File file = new File(filePath);
+    private static String filepath;
 
     public ConcertSerialisation() {
             // Créer le fichier s'il n'existe pas
@@ -32,7 +33,11 @@ public class ConcertSerialisation {
             }
         }
 
-        // Ajouter un concert au fichier
+    public static void overrideFilePath(String absolutePath) {
+        filepath = absolutePath;
+    }
+
+    // Ajouter un concert au fichier
         public void addConcert(Concert concert) throws IOException {
             List<Concert> concerts = getAllConcerts();
             concerts.add(concert);

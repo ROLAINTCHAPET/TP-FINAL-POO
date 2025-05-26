@@ -18,6 +18,7 @@
                 <Font name="System Bold" size="24.0" />
             </font>
         </Label>
+      <Label text="Entrez le mot de passe de votre compte" />
 
         <VBox prefWidth="300" spacing="10.0">
          <children>
